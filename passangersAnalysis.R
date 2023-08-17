@@ -55,3 +55,10 @@ p <- autoplot(frcst_a, include = 20, ylab="passangers", xlab = "year")
 p
 p + geom_line(aes(x=as.numeric(time(test_data)), y = as.numeric(test_data)), col ="red") 
 p 
+
+#Next we do a time series crossvalidation to further study the model performance obtained from the auto.arima
+wrappi <- function(x, h){forecast(Arima(x, order=c(0,1,1), seasonal = c(0,1,1)), h=h)}
+e <- tsCV(AirPassengers, wrappi, h=14, window = 28)
+e
+mean(e, na.rm=TRUE)
+
