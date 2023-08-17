@@ -1,2 +1,2 @@
-# AirPassangersAnalysis
-Analysis and forecasts from the classical air passangers data
+# AirPassengersAnalysis
+Analysis and forecasts from the classical air passengers data
